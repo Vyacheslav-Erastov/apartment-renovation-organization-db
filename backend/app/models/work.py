@@ -2,7 +2,7 @@ from datetime import datetime
 from uuid import UUID
 
 from sqlalchemy import ForeignKey
-from db.base_class import Base
+from app.db.base_class import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 # ID (Идентификатор работы, первичный ключ)
