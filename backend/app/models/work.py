@@ -2,7 +2,6 @@ from datetime import datetime
 from uuid import UUID
 
 from sqlalchemy import ForeignKey
-from app.models.order import Order
 from db.base_class import Base
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
