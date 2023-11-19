@@ -3,6 +3,7 @@ from uuid import UUID
 from pydantic import BaseModel
 
 from app.models import OrderStatus
+from app.schemas.work import Work
 
 
 class OrderBase(BaseModel):

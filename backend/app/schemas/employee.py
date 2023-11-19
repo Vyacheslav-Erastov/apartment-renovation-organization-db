@@ -1,6 +1,8 @@
 from uuid import UUID
 from pydantic import BaseModel
 
+from app.schemas.work import Work
+
 
 class EmployeeBase(BaseModel):
     first_name: str

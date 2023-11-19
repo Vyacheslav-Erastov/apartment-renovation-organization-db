@@ -1,4 +1,4 @@
-from uuid import UUID
+from uuid import UUID, uuid4
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app import schemas
@@ -22,12 +22,29 @@ def create_client(
     db: Session = Depends(deps.get_db),
 ):
     try:
+        client_in.id = uuid4()
         client = crud.client.create(db=db, obj_in=client_in)
         db.commit()
     except Exception as e:
         db.rollback()
         print(e)
     return client
+
+
+@router.post("/multi", response_model=list[schemas.Client])
+def create_clients(
+    clients_in: list[schemas.ClientCreate],
+    db: Session = Depends(deps.get_db),
+):
+    for client_in in clients_in:
+        try:
+            client_in.id = uuid4()
+            client = crud.client.create(db=db, obj_in=client_in)
+            db.commit()
+        except Exception as e:
+            db.rollback()
+            print(e)
+    return clients_in
 
 
 @router.put("/{client_id}", response_model=schemas.Client)
@@ -45,7 +62,7 @@ def update_client(
     return client
 
 
-@router.delete("/")
+@router.delete("/{client_id}")
 def delete_client(client_id: UUID, db: Session = Depends(deps.get_db)):
     crud.client.remove(db=db, _id=client_id)
     return client_id

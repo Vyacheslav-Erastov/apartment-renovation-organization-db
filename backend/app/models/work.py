@@ -20,3 +20,4 @@ class Work(Base):
     description: Mapped[str | None] = mapped_column(default=None)
     service_id: Mapped[UUID] = mapped_column(ForeignKey("services.id"))
     order_id: Mapped[UUID] = mapped_column(ForeignKey("orders.id"))
+    employee_id: Mapped[UUID] = mapped_column(ForeignKey("employees.id"))
