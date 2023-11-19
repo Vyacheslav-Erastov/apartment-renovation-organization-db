@@ -1,0 +1,229 @@
+[
+    {
+      "id": 1,
+      "first_name": "John",
+      "second_name": "Doe",
+      "phone_number": "+1234567890",
+      "email": "john.doe@example.com",
+      "address": "123 Main Street"
+    },
+    {
+      "id": 2,
+      "first_name": "Jane",
+      "second_name": "Smith",
+      "phone_number": "+9876543210",
+      "email": "jane.smith@example.com",
+      "address": "456 Oak Avenue"
+    },
+    {
+      "id": 3,
+      "first_name": "Bob",
+      "second_name": "Johnson",
+      "phone_number": "+1122334455",
+      "email": "bob.johnson@example.com",
+      "address": "789 Pine Road"
+    },
+    {
+      "id": 4,
+      "first_name": "Alice",
+      "second_name": "Williams",
+      "phone_number": "+9988776655",
+      "email": "alice.williams@example.com",
+      "address": "101 Cedar Lane"
+    },
+    {
+      "id": 5,
+      "first_name": "Charlie",
+      "second_name": "Brown",
+      "phone_number": "+4455667788",
+      "email": "charlie.brown@example.com",
+      "address": "202 Elm Street"
+    },
+    {
+      "id": 6,
+      "first_name": "Eva",
+      "second_name": "Davis",
+      "phone_number": "+6677889900",
+      "email": "eva.davis@example.com",
+      "address": "303 Maple Drive"
+    },
+    {
+      "id": 7,
+      "first_name": "David",
+      "second_name": "Miller",
+      "phone_number": "+1122334455",
+      "email": "david.miller@example.com",
+      "address": "404 Birch Lane"
+    },
+    {
+      "id": 8,
+      "first_name": "Grace",
+      "second_name": "Anderson",
+      "phone_number": "+9988776655",
+      "email": "grace.anderson@example.com",
+      "address": "505 Pine Road"
+    },
+    {
+      "id": 9,
+      "first_name": "Frank",
+      "second_name": "Clark",
+      "phone_number": "+4455667788",
+      "email": "frank.clark@example.com",
+      "address": "606 Oak Avenue"
+    },
+    {
+      "id": 10,
+      "first_name": "Helen",
+      "second_name": "Martin",
+      "phone_number": "+6677889900",
+      "email": "helen.martin@example.com",
+      "address": "707 Cedar Lane"
+    }
+  ]
+
+  [
+    {
+      "id": 1,
+      "first_name": "Michael",
+      "second_name": "Smith",
+      "job_title": "Technician",
+      "phone_number": "+1122334455",
+      "email": "michael.smith@example.com"
+    },
+    {
+      "id": 2,
+      "first_name": "Emily",
+      "second_name": "Johnson",
+      "job_title": "Engineer",
+      "phone_number": "+9988776655",
+      "email": "emily.johnson@example.com"
+    },
+    {
+      "id": 3,
+      "first_name": "Daniel",
+      "second_name": "Brown",
+      "job_title": "Mechanic",
+      "phone_number": "+4455667788",
+      "email": "daniel.brown@example.com"
+    },
+    {
+      "id": 4,
+      "first_name": "Sophia",
+      "second_name": "Davis",
+      "job_title": "Electrician",
+      "phone_number": "+6677889900",
+      "email": "sophia.davis@example.com"
+    },
+    {
+      "id": 5,
+      "first_name": "Matthew",
+      "second_name": "Miller",
+      "job_title": "Plumber",
+      "phone_number": "+1234567890",
+      "email": "matthew.miller@example.com"
+    },
+    {
+      "id": 6,
+      "first_name": "Olivia",
+      "second_name": "Anderson",
+      "job_title": "Carpenter",
+      "phone_number": "+1122334455",
+      "email": "olivia.anderson@example.com"
+    },
+    {
+      "id": 7,
+      "first_name": "Liam",
+      "second_name": "Clark",
+      "job_title": "Painter",
+      "phone_number": "+9988776655",
+      "email": "liam.clark@example.com"
+    },
+    {
+      "id": 8,
+      "first_name": "Ava",
+      "second_name": "Martin",
+      "job_title": "Landscaper",
+      "phone_number": "+4455667788",
+      "email": "ava.martin@example.com"
+    },
+    {
+      "id": 9,
+      "first_name": "Logan",
+      "second_name": "Taylor",
+      "job_title": "Welder",
+      "phone_number": "+6677889900",
+      "email": "logan.taylor@example.com"
+    },
+    {
+      "id": 10,
+      "first_name": "Chloe",
+      "second_name": "Moore",
+      "job_title": "HVAC Technician",
+      "phone_number": "+1234567890",
+      "email": "chloe.moore@example.com"
+    }
+  ]
+
+
+  [
+    {
+      "id": 1,
+      "name": "Electrical Repair",
+      "description": "Troubleshooting and repairing electrical issues.",
+      "price": 150.00
+    },
+    {
+      "id": 2,
+      "name": "Plumbing Service",
+      "description": "Installation and repair of plumbing systems.",
+      "price": 120.00
+    },
+    {
+      "id": 3,
+      "name": "Painting",
+      "description": "Interior and exterior painting services.",
+      "price": 200.00
+    },
+    {
+      "id": 4,
+      "name": "Carpentry",
+      "description": "Woodwork, furniture repair, and installations.",
+      "price": 180.00
+    },
+    {
+      "id": 5,
+      "name": "HVAC Maintenance",
+      "description": "Heating, ventilation, and air conditioning system maintenance.",
+      "price": 160.00
+    },
+    {
+      "id": 6,
+      "name": "Landscaping",
+      "description": "Design and maintenance of outdoor spaces.",
+      "price": 220.00
+    },
+    {
+      "id": 7,
+      "name": "Welding",
+      "description": "Metal fabrication and welding services.",
+      "price": 180.00
+    },
+    {
+      "id": 8,
+      "name": "Mechanical Repairs",
+      "description": "Repair and maintenance of mechanical systems.",
+      "price": 170.00
+    },
+    {
+      "id": 9,
+      "name": "Appliance Installation",
+      "description": "Installation of various household appliances.",
+      "price": 130.00
+    },
+    {
+      "id": 10,
+      "name": "General Maintenance",
+      "description": "General repair and maintenance services.",
+      "price": 150.00
+    }
+  ]
