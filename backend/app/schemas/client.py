@@ -27,7 +27,7 @@ class ClientIn(Client):
 
 
 class ClientCreate(Client):
-    pass
+    id: int | None = None
 
 
 class ClientDetailed(Client):

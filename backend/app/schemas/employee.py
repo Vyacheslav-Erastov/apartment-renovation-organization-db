@@ -28,7 +28,7 @@ class EmployeeIn(Employee):
 
 
 class EmployeeCreate(Employee):
-    pass
+    id: int | None = None
 
 
 class EmployeeDetailed(Employee):

@@ -21,8 +21,8 @@ class OrderUpdate(OrderBase):
 
 
 class Order(OrderBase):
-    id: UUID
-    client_id: UUID
+    id: int
+    client_id: int
 
 
 class OrderIn(OrderBase):

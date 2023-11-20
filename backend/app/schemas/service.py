@@ -16,7 +16,7 @@ class ServiceUpdate(ServiceBase):
 
 
 class Service(ServiceBase):
-    id: UUID
+    id: int
 
 
 class ServiceIn(Service):

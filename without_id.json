@@ -1,0 +1,414 @@
+[
+  {
+    "id": 1,
+    "first_name": "Иван",
+    "second_name": "Иванов",
+    "phone_number": "123-456-7890",
+    "email": "ivan.ivanov@example.com",
+    "address": "ул. Примерная, д. 1, кв. 101"
+  },
+  {
+    "id": 2,
+    "first_name": "Мария",
+    "second_name": "Петрова",
+    "phone_number": "987-654-3210",
+    "email": "maria.petrova@example.com",
+    "address": "пр. Образцовый, д. 2, кв. 202"
+  },
+  {
+    "id": 3,
+    "first_name": "Александр",
+    "second_name": "Сидоров",
+    "phone_number": "555-123-4567",
+    "email": "alex.sidorov@example.com",
+    "address": "ул. Тестовая, д. 3, кв. 303"
+  },
+  {
+    "id": 4,
+    "first_name": "Екатерина",
+    "second_name": "Кузнецова",
+    "phone_number": "777-987-6543",
+    "email": "ekaterina.kuznetsova@example.com",
+    "address": "пр. Примерный, д. 4, кв. 404"
+  },
+  {
+    "id": 5,
+    "first_name": "Дмитрий",
+    "second_name": "Васнецов",
+    "phone_number": "111-222-3333",
+    "email": "dmitry.vasnetsov@example.com",
+    "address": "ул. Образцовая, д. 5, кв. 505"
+  },
+  {
+    "id": 6,
+    "first_name": "Анна",
+    "second_name": "Игнатьева",
+    "phone_number": "999-888-7777",
+    "email": "anna.ignatieva@example.com",
+    "address": "пр. Тестовый, д. 6, кв. 606"
+  },
+  {
+    "id": 7,
+    "first_name": "Павел",
+    "second_name": "Захаров",
+    "phone_number": "444-555-6666",
+    "email": "pavel.zakharov@example.com",
+    "address": "ул. Примеров, д. 7, кв. 707"
+  },
+  {
+    "id": 8,
+    "first_name": "Ольга",
+    "second_name": "Николаева",
+    "phone_number": "777-111-2222",
+    "email": "olga.nikolaeva@example.com",
+    "address": "пр. Образов, д. 8, кв. 808"
+  },
+  {
+    "id": 9,
+    "first_name": "Игорь",
+    "second_name": "Максимов",
+    "phone_number": "333-444-5555",
+    "email": "igor.maximov@example.com",
+    "address": "ул. Тестова, д. 9, кв. 909"
+  },
+  {
+    "id": 10,
+    "first_name": "Наталья",
+    "second_name": "Смирнова",
+    "phone_number": "888-999-0000",
+    "email": "natalia.smirnova@example.com",
+    "address": "пр. Примеров, д. 10, кв. 1010"
+  }
+]
+
+[
+  {
+    "id": 1,
+    "first_name": "Андрей",
+    "second_name": "Иванов",
+    "job_title": "Строитель",
+    "phone_number": "123-456-7890",
+    "email": "andrey.ivanov@example.com"
+  },
+  {
+    "id": 2,
+    "first_name": "Елена",
+    "second_name": "Петрова",
+    "job_title": "Дизайнер",
+    "phone_number": "987-654-3210",
+    "email": "elena.petrova@example.com"
+  },
+  {
+    "id": 3,
+    "first_name": "Сергей",
+    "second_name": "Сидоров",
+    "job_title": "Электрик",
+    "phone_number": "555-123-4567",
+    "email": "sergey.sidorov@example.com"
+  },
+  {
+    "id": 4,
+    "first_name": "Марина",
+    "second_name": "Кузнецова",
+    "job_title": "Сантехник",
+    "phone_number": "777-987-6543",
+    "email": "marina.kuznetsova@example.com"
+  },
+  {
+    "id": 5,
+    "first_name": "Владимир",
+    "second_name": "Васнецов",
+    "job_title": "Мастер по отделке",
+    "phone_number": "111-222-3333",
+    "email": "vladimir.vasnetsov@example.com"
+  },
+  {
+    "id": 6,
+    "first_name": "Татьяна",
+    "second_name": "Игнатьева",
+    "job_title": "Плиточник",
+    "phone_number": "999-888-7777",
+    "email": "tatiana.ignatieva@example.com"
+  },
+  {
+    "id": 7,
+    "first_name": "Иван",
+    "second_name": "Захаров",
+    "job_title": "Паркетчик",
+    "phone_number": "444-555-6666",
+    "email": "ivan.zakharov@example.com"
+  },
+  {
+    "id": 8,
+    "first_name": "Нина",
+    "second_name": "Николаева",
+    "job_title": "Штукатур",
+    "phone_number": "777-111-2222",
+    "email": "nina.nikolaeva@example.com"
+  },
+  {
+    "id": 9,
+    "first_name": "Денис",
+    "second_name": "Максимов",
+    "job_title": "Краснодеревщик",
+    "phone_number": "333-444-5555",
+    "email": "denis.maximov@example.com"
+  },
+  {
+    "id": 10,
+    "first_name": "Екатерина",
+    "second_name": "Смирнова",
+    "job_title": "Столяр",
+    "phone_number": "888-999-0000",
+    "email": "ekaterina.smirnova@example.com"
+  }
+]
+
+[
+  {
+    "id": 1,
+    "name": "Ремонт стен",
+    "description": "Покраска и шпатлевка стен",
+    "price": 5000
+  },
+  {
+    "id": 2,
+    "name": "Укладка плитки",
+    "description": "Укладка кафельной плитки на пол и стены",
+    "price": 7000
+  },
+  {
+    "id": 3,
+    "name": "Электромонтаж",
+    "description": "Установка и подключение электрических сетей и приборов",
+    "price": 8000
+  },
+  {
+    "id": 4,
+    "name": "Укладка ламината",
+    "description": "Укладка ламинированного напольного покрытия",
+    "price": 6000
+  },
+  {
+    "id": 5,
+    "name": "Монтаж сантехники",
+    "description": "Установка ванны, умывальника, унитаза и другой сантехники",
+    "price": 9000
+  },
+  {
+    "id": 6,
+    "name": "Отделка потолка",
+    "description": "Покраска и отделка потолка",
+    "price": 4500
+  },
+  {
+    "id": 7,
+    "name": "Монтаж паркета",
+    "description": "Укладка паркетной доски на пол",
+    "price": 8500
+  },
+  {
+    "id": 8,
+    "name": "Штукатурные работы",
+    "description": "Выравнивание стен и потолков штукатуркой",
+    "price": 5500
+  },
+  {
+    "id": 9,
+    "name": "Краска дверей и окон",
+    "description": "Покраска дверей и оконных рам",
+    "price": 3000
+  },
+  {
+    "id": 10,
+    "name": "Мебельная сборка",
+    "description": "Сборка и установка мебели",
+    "price": 4000
+  }
+]
+
+[
+  {
+    "id": 1,
+    "client_id": 1,
+    "start_date": "2023-01-10",
+    "finish_date": "2023-02-05",
+    "price": 12000,
+    "status": "в работе",
+    "paid": false
+  },
+  {
+    "id": 2,
+    "client_id": 3,
+    "start_date": "2023-02-15",
+    "finish_date": "2023-03-10",
+    "price": 8500,
+    "status": "завершен",
+    "paid": true
+  },
+  {
+    "id": 3,
+    "client_id": 5,
+    "start_date": "2023-03-20",
+    "finish_date": "2023-04-15",
+    "price": 9500,
+    "status": "в работе",
+    "paid": false
+  },
+  {
+    "id": 4,
+    "client_id": 7,
+    "start_date": "2023-04-25",
+    "finish_date": "2023-05-20",
+    "price": 7500,
+    "status": "завершен",
+    "paid": true
+  },
+  {
+    "id": 5,
+    "client_id": 9,
+    "start_date": "2023-06-01",
+    "finish_date": "2023-06-25",
+    "price": 11000,
+    "status": "в работе",
+    "paid": false
+  },
+  {
+    "id": 6,
+    "client_id": 2,
+    "start_date": "2023-07-10",
+    "finish_date": "2023-08-05",
+    "price": 13500,
+    "status": "завершен",
+    "paid": true
+  },
+  {
+    "id": 7,
+    "client_id": 4,
+    "start_date": "2023-08-15",
+    "finish_date": "2023-09-10",
+    "price": 9200,
+    "status": "в работе",
+    "paid": false
+  },
+  {
+    "id": 8,
+    "client_id": 6,
+    "start_date": "2023-09-20",
+    "finish_date": "2023-10-15",
+    "price": 7800,
+    "status": "завершен",
+    "paid": true
+  },
+  {
+    "id": 9,
+    "client_id": 8,
+    "start_date": "2023-11-01",
+    "finish_date": "2023-11-25",
+    "price": 10200,
+    "status": "в работе",
+    "paid": false
+  },
+  {
+    "id": 10,
+    "client_id": 10,
+    "start_date": "2023-12-05",
+    "finish_date": "2023-12-30",
+    "price": 8900,
+    "status": "завершен",
+    "paid": true
+  }
+]
+
+[
+  {
+    "id": 1,
+    "order_id": 1,
+    "service_id": 1,
+    "employee_id": 3,
+    "start_date": "2023-01-12",
+    "finish_date": "2023-01-20",
+    "description": "Покраска и шпатлевка стен"
+  },
+  {
+    "id": 2,
+    "order_id": 2,
+    "service_id": 2,
+    "employee_id": 1,
+    "start_date": "2023-02-20",
+    "finish_date": "2023-03-05",
+    "description": "Укладка кафельной плитки на пол и стены"
+  },
+  {
+    "id": 3,
+    "order_id": 3,
+    "service_id": 3,
+    "employee_id": 4,
+    "start_date": "2023-03-25",
+    "finish_date": "2023-04-10",
+    "description": "Установка и подключение электрических сетей и приборов"
+  },
+  {
+    "id": 4,
+    "order_id": 4,
+    "service_id": 4,
+    "employee_id": 6,
+    "start_date": "2023-05-01",
+    "finish_date": "2023-05-15",
+    "description": "Укладка ламинированного напольного покрытия"
+  },
+  {
+    "id": 5,
+    "order_id": 5,
+    "service_id": 5,
+    "employee_id": 2,
+    "start_date": "2023-06-10",
+    "finish_date": "2023-06-20",
+    "description": "Установка ванны, умывальника, унитаза и другой сантехники"
+  },
+  {
+    "id": 6,
+    "order_id": 6,
+    "service_id": 6,
+    "employee_id": 8,
+    "start_date": "2023-07-15",
+    "finish_date": "2023-08-01",
+    "description": "Покраска и отделка потолка"
+  },
+  {
+    "id": 7,
+    "order_id": 7,
+    "service_id": 7,
+    "employee_id": 5,
+    "start_date": "2023-08-10",
+    "finish_date": "2023-08-25",
+    "description": "Укладка паркетной доски на пол"
+  },
+  {
+    "id": 8,
+    "order_id": 8,
+    "service_id": 8,
+    "employee_id": 7,
+    "start_date": "2023-09-01",
+    "finish_date": "2023-09-15",
+    "description": "Выравнивание стен и потолков штукатуркой"
+  },
+  {
+    "id": 9,
+    "order_id": 9,
+    "service_id": 9,
+    "employee_id": 9,
+    "start_date": "2023-10-01",
+    "finish_date": "2023-10-20",
+    "description": "Покраска дверей и оконных рам"
+  },
+  {
+    "id": 10,
+    "order_id": 10,
+    "service_id": 10,
+    "employee_id": 10,
+    "start_date": "2023-11-05",
+    "finish_date": "2023-11-15",
+    "description": "Сборка и установка мебели"
+  }
+]

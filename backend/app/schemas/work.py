@@ -17,9 +17,10 @@ class WorkUpdate(WorkBase):
 
 
 class Work(WorkBase):
-    id: UUID
-    service_id: UUID
-    order_id: UUID
+    id: int
+    service_id: int
+    order_id: int
+    employee_id: int
 
 
 class WorkIn(Work):

@@ -1,8 +1,8 @@
 """init
 
-Revision ID: 36c76f9f50c9
+Revision ID: 1321be4cbacd
 Revises: 
-Create Date: 2023-11-19 17:12:50.427095
+Create Date: 2023-11-20 19:09:07.840694
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '36c76f9f50c9'
+revision: str = '1321be4cbacd'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -26,7 +26,7 @@ def upgrade() -> None:
     sa.Column('phone_number', sa.String(), nullable=False),
     sa.Column('email', sa.String(), nullable=True),
     sa.Column('address', sa.String(), nullable=False),
-    sa.Column('id', sa.Uuid(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('employees',
@@ -35,14 +35,14 @@ def upgrade() -> None:
     sa.Column('job_title', sa.String(), nullable=False),
     sa.Column('phone_number', sa.String(), nullable=False),
     sa.Column('email', sa.String(), nullable=True),
-    sa.Column('id', sa.Uuid(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('services',
     sa.Column('name', sa.String(), nullable=False),
     sa.Column('description', sa.String(), nullable=False),
     sa.Column('price', sa.Float(), nullable=False),
-    sa.Column('id', sa.Uuid(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('orders',
@@ -50,22 +50,23 @@ def upgrade() -> None:
     sa.Column('finish_date', sa.DateTime(), nullable=False),
     sa.Column('price', sa.Float(), nullable=True),
     sa.Column('status', sa.Enum('CREATED', 'IN_PROGRESS', 'CANCELED', 'COMPLETED', name='orderstatus'), nullable=False),
-    sa.Column('client_id', sa.Uuid(), nullable=False),
-    sa.Column('id', sa.Uuid(), nullable=False),
-    sa.ForeignKeyConstraint(['client_id'], ['clients.id'], ),
+    sa.Column('paid', sa.Boolean(), nullable=False),
+    sa.Column('client_id', sa.Integer(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.ForeignKeyConstraint(['client_id'], ['clients.id'], ondelete="CASCADE"),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('works',
     sa.Column('start_date', sa.DateTime(), nullable=False),
     sa.Column('finish_date', sa.DateTime(), nullable=True),
     sa.Column('description', sa.String(), nullable=True),
-    sa.Column('service_id', sa.Uuid(), nullable=False),
-    sa.Column('order_id', sa.Uuid(), nullable=False),
-    sa.Column('employee_id', sa.Uuid(), nullable=False),
-    sa.Column('id', sa.Uuid(), nullable=False),
-    sa.ForeignKeyConstraint(['employee_id'], ['employees.id'], ),
-    sa.ForeignKeyConstraint(['order_id'], ['orders.id'], ),
-    sa.ForeignKeyConstraint(['service_id'], ['services.id'], ),
+    sa.Column('service_id', sa.Integer(), nullable=False),
+    sa.Column('order_id', sa.Integer(), nullable=False),
+    sa.Column('employee_id', sa.Integer(), nullable=False),
+    sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
+    sa.ForeignKeyConstraint(['employee_id'], ['employees.id'], ondelete="CASCADE"),
+    sa.ForeignKeyConstraint(['order_id'], ['orders.id'], ondelete="CASCADE"),
+    sa.ForeignKeyConstraint(['service_id'], ['services.id'], ondelete="CASCADE"),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
