@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Должность</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Почта</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+        <tr>
+            <th scope="row">{{employee.id}}</th>
+            <td>{{employee.first_name}} {{employee.second_name}}</td>
+            <td>{{employee.job_title}}</td>
+            <td>{{employee.phone_number}}</td>
+            <td>{{employee.email}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

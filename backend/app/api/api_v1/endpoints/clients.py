@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
+from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
 from app import crud
@@ -7,22 +8,27 @@ from app.api import dependencies as deps
 
 router = APIRouter()
 
+templates = Jinja2Templates(directory="templates")
+
 
 @router.get("/", response_model=list[schemas.ClientDetailed])
-def read_clients(
-    db: Session = Depends(deps.get_db),
-):
-    clients = crud.client.get_multi(db=db)
-    return clients
+def read_clients(request: Request, db: Session = Depends(deps.get_db)):
+    db_clients = crud.client.get_multi(db=db)
+    clients = []
+    for db_client in db_clients:
+        client = schemas.ClientTemplate.from_orm(db_client).model_dump()
+        clients.append(client)
+    return templates.TemplateResponse(
+        request=request, name="clients.html", context={"clients": clients}
+    )
 
 
 @router.post("/", response_model=schemas.Client)
 def create_client(
-    client_in: schemas.ClientCreate,
+    client_in: schemas.ClientCreate = Depends(schemas.ClientForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
     try:
-        client_in.id = uuid4()
         client = crud.client.create(db=db, obj_in=client_in)
         db.commit()
     except Exception as e:
@@ -38,7 +44,6 @@ def create_clients(
 ):
     for client_in in clients_in:
         try:
-            client_in.id = uuid4()
             client = crud.client.create(db=db, obj_in=client_in)
             db.commit()
         except Exception as e:
@@ -49,7 +54,7 @@ def create_clients(
 
 @router.put("/{client_id}", response_model=schemas.Client)
 def update_client(
-    client_id: UUID,
+    client_id: int,
     client_in: schemas.ClientUpdate,
     db: Session = Depends(deps.get_db),
 ):

@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Request
+from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
 from app import crud
@@ -8,12 +9,22 @@ from app.api import dependencies as deps
 router = APIRouter()
 
 
-@router.get("/", response_model=list[schemas.Service])
+templates = Jinja2Templates(directory="templates")
+
+
+@router.get("/")
 def read_services(
+    request: Request,
     db: Session = Depends(deps.get_db),
 ):
-    services = crud.service.get_multi(db=db)
-    return services
+    db_services = crud.service.get_multi(db=db)
+    services = []
+    for db_service in db_services:
+        service = schemas.ServiceTemplate.from_orm(db_service).model_dump()
+        services.append(service)
+    return templates.TemplateResponse(
+        request=request, name="services.html", context={"services": services}
+    )
 
 
 @router.post("/", response_model=schemas.Service)

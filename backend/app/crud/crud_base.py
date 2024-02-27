@@ -1,5 +1,4 @@
 from typing import Generic, Optional, Type, TypeVar
-from uuid import UUID
 
 from fastapi.encoders import jsonable_encoder
 from pydantic import BaseModel
@@ -17,7 +16,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
     def __init__(self, model: Type[ModelType]):
         self.model = model
 
-    def get(self, db: Session, _id: UUID) -> Optional[ModelType]:
+    def get(self, db: Session, _id: int) -> Optional[ModelType]:
         stmt = select(self.model).where(self.model.id == _id)
         result = db.scalars(stmt).first()
         return result
@@ -32,7 +31,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         result = db.scalars(stmt).first()
         return result
 
-    def update(self, db: Session, obj_in: UpdateSchemaType, _id: UUID) -> ModelType:
+    def update(self, db: Session, obj_in: UpdateSchemaType, _id: int) -> ModelType:
         stmt = (
             update(self.model)
             .where(self.model.id == _id)
@@ -42,7 +41,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         result = db.scalars(stmt).first()
         return result
 
-    def remove(self, db: Session, _id: UUID) -> UUID:
+    def remove(self, db: Session, _id: int) -> int:
         stmt = delete(self.model).where(self.model.id == _id)
         db.execute(stmt)
         return _id

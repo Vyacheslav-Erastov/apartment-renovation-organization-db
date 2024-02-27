@@ -1,4 +1,5 @@
 from uuid import UUID
+from fastapi import Form
 from pydantic import BaseModel
 
 from app.schemas.work import Work
@@ -12,7 +13,7 @@ class EmployeeBase(BaseModel):
     email: str | None = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class EmployeeUpdate(EmployeeBase):
@@ -20,7 +21,7 @@ class EmployeeUpdate(EmployeeBase):
 
 
 class Employee(EmployeeBase):
-    id: UUID
+    pass
 
 
 class EmployeeIn(Employee):
@@ -28,7 +29,29 @@ class EmployeeIn(Employee):
 
 
 class EmployeeCreate(Employee):
-    id: int | None = None
+    pass
+
+class EmployeeTemplate(Employee):
+    id: int
+
+class EmployeeForm(Employee):
+
+    @classmethod
+    def as_form(
+        cls,
+        first_name: str = Form(),
+        second_name: str = Form(),
+        phone_number: str = Form(),
+        email: str | None = Form(),
+        job_title: str = Form(),
+    ):
+        return cls(
+            first_name=first_name,
+            second_name=second_name,
+            phone_number=phone_number,
+            email=email,
+            job_title=job_title,
+        )
 
 
 class EmployeeDetailed(Employee):

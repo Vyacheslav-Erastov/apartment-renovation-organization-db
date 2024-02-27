@@ -1,4 +1,5 @@
 from uuid import UUID
+from fastapi import Form
 from pydantic import BaseModel
 from app.schemas.order import Order
 
@@ -11,7 +12,7 @@ class ClientBase(BaseModel):
     address: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class ClientUpdate(ClientBase):
@@ -19,7 +20,7 @@ class ClientUpdate(ClientBase):
 
 
 class Client(ClientBase):
-    id: UUID
+    pass
 
 
 class ClientIn(Client):
@@ -27,8 +28,33 @@ class ClientIn(Client):
 
 
 class ClientCreate(Client):
-    id: int | None = None
+    pass
+
+
+class ClientTemplate(Client):
+    id: int
+
+
+class ClientForm(Client):
+
+    @classmethod
+    def as_form(
+        cls,
+        first_name: str = Form(),
+        second_name: str = Form(),
+        phone_number: str = Form(),
+        email: str | None = Form(),
+        address: str = Form(),
+    ):
+        return cls(
+            first_name=first_name,
+            second_name=second_name,
+            phone_number=phone_number,
+            email=email,
+            address=address,
+        )
 
 
 class ClientDetailed(Client):
+    id: int
     orders: list["Order"] = []

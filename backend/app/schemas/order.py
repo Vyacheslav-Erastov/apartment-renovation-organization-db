@@ -1,5 +1,6 @@
 from datetime import datetime
 from uuid import UUID
+from fastapi import Form
 from pydantic import BaseModel
 
 from app.models import OrderStatus
@@ -13,7 +14,7 @@ class OrderBase(BaseModel):
     status: OrderStatus
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 class OrderUpdate(OrderBase):
@@ -21,7 +22,6 @@ class OrderUpdate(OrderBase):
 
 
 class Order(OrderBase):
-    id: int
     client_id: int
 
 
@@ -31,6 +31,30 @@ class OrderIn(OrderBase):
 
 class OrderCreate(Order):
     pass
+
+
+class OrderTemplate(Order):
+    id: int
+
+
+class OrderForm(Order):
+
+    @classmethod
+    def as_form(
+        cls,
+        start_date: str = Form(),
+        finish_date: str = Form(),
+        price: float = Form(),
+        status: OrderStatus = OrderStatus.CREATED,
+        client_id: int = Form(),
+    ):
+        return cls(
+            start_date=start_date,
+            finish_date=finish_date,
+            price=price,
+            status=status,
+            client_id=client_id,
+        )
 
 
 class OrderDetailed(Order):

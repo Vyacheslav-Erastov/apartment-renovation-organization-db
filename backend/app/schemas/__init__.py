@@ -5,8 +5,19 @@ from .client import (
     ClientIn,
     ClientCreate,
     ClientDetailed,
+    ClientTemplate,
+    ClientForm,
 )
-from .order import OrderBase, OrderUpdate, Order, OrderIn, OrderCreate, OrderDetailed
+from .order import (
+    OrderBase,
+    OrderUpdate,
+    Order,
+    OrderIn,
+    OrderCreate,
+    OrderDetailed,
+    OrderTemplate,
+    OrderForm,
+)
 from .employee import (
     EmployeeBase,
     EmployeeUpdate,
@@ -14,7 +25,17 @@ from .employee import (
     EmployeeIn,
     EmployeeCreate,
     EmployeeDetailed,
+    EmployeeTemplate,
+    EmployeeForm,
 )
-from .service import ServiceBase, ServiceUpdate, Service, ServiceIn, ServiceCreate
-from .work import WorkBase, WorkUpdate, Work, WorkIn, WorkCreate
+from .service import (
+    ServiceBase,
+    ServiceUpdate,
+    Service,
+    ServiceIn,
+    ServiceCreate,
+    ServiceTemplate,
+    ServiceForm,
+)
+from .work import WorkBase, WorkUpdate, Work, WorkIn, WorkCreate, WorkTemplate, WorkForm
 from .websocket import MessageWS, EventWS

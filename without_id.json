@@ -412,3 +412,76 @@
     "description": "Сборка и установка мебели"
   }
 ]
+
+[
+  {
+    "first_name": "Иван",
+    "second_name": "Иванов",
+    "phone_number": "123-456-7890",
+    "email": "ivan.ivanov@example.com",
+    "address": "ул. Примерная, д. 1, кв. 101"
+  },
+  {
+    "first_name": "Мария",
+    "second_name": "Петрова",
+    "phone_number": "987-654-3210",
+    "email": "maria.petrova@example.com",
+    "address": "пр. Образцовый, д. 2, кв. 202"
+  },
+  {
+    "first_name": "Александр",
+    "second_name": "Сидоров",
+    "phone_number": "555-123-4567",
+    "email": "alex.sidorov@example.com",
+    "address": "ул. Тестовая, д. 3, кв. 303"
+  },
+  {
+    "first_name": "Екатерина",
+    "second_name": "Кузнецова",
+    "phone_number": "777-987-6543",
+    "email": "ekaterina.kuznetsova@example.com",
+    "address": "пр. Примерный, д. 4, кв. 404"
+  },
+  {
+    "first_name": "Дмитрий",
+    "second_name": "Васнецов",
+    "phone_number": "111-222-3333",
+    "email": "dmitry.vasnetsov@example.com",
+    "address": "ул. Образцовая, д. 5, кв. 505"
+  },
+  {
+    "first_name": "Анна",
+    "second_name": "Игнатьева",
+    "phone_number": "999-888-7777",
+    "email": "anna.ignatieva@example.com",
+    "address": "пр. Тестовый, д. 6, кв. 606"
+  },
+  {
+    "first_name": "Павел",
+    "second_name": "Захаров",
+    "phone_number": "444-555-6666",
+    "email": "pavel.zakharov@example.com",
+    "address": "ул. Примеров, д. 7, кв. 707"
+  },
+  {
+    "first_name": "Ольга",
+    "second_name": "Николаева",
+    "phone_number": "777-111-2222",
+    "email": "olga.nikolaeva@example.com",
+    "address": "пр. Образов, д. 8, кв. 808"
+  },
+  {
+    "first_name": "Игорь",
+    "second_name": "Максимов",
+    "phone_number": "333-444-5555",
+    "email": "igor.maximov@example.com",
+    "address": "ул. Тестова, д. 9, кв. 909"
+  },
+  {
+    "first_name": "Наталья",
+    "second_name": "Смирнова",
+    "phone_number": "888-999-0000",
+    "email": "natalia.smirnova@example.com",
+    "address": "пр. Примеров, д. 10, кв. 1010"
+  }
+]
