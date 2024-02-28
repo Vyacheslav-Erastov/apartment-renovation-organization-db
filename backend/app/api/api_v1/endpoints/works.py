@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, status
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
@@ -27,19 +28,21 @@ def read_works(
     )
 
 
-@router.post("/", response_model=schemas.Work)
+@router.post("/")
 def create_work(
-    work_in: schemas.WorkCreate,
+    request: Request,
+    work_in: schemas.WorkCreate = Depends(schemas.WorkForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
     try:
-        work_in.id = uuid4()
         work = crud.work.create(db=db, obj_in=work_in)
         db.commit()
     except Exception as e:
         db.rollback()
         print(e)
-    return work
+    return RedirectResponse(
+        request.url_for("read_works"), status_code=status.HTTP_303_SEE_OTHER
+    )
 
 
 @router.post("/multi", response_model=list[schemas.Work])

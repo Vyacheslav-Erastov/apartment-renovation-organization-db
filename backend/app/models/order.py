@@ -29,5 +29,5 @@ class Order(Base):
     price: Mapped[float | None] = mapped_column(default=None)
     status: Mapped[OrderStatus]
     paid: Mapped[bool] = mapped_column(default=False)
-    client_id: Mapped[UUID] = mapped_column(ForeignKey("clients.id"))
+    client_id: Mapped[int] = mapped_column(ForeignKey("clients.id"))
     works: Mapped[list["Work"]] = relationship(cascade="all, delete-orphan")

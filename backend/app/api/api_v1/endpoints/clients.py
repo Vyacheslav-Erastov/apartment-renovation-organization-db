@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, status
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
@@ -11,7 +12,7 @@ router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
 
-@router.get("/", response_model=list[schemas.ClientDetailed])
+@router.get("/")
 def read_clients(request: Request, db: Session = Depends(deps.get_db)):
     db_clients = crud.client.get_multi(db=db)
     clients = []
@@ -23,8 +24,9 @@ def read_clients(request: Request, db: Session = Depends(deps.get_db)):
     )
 
 
-@router.post("/", response_model=schemas.Client)
+@router.post("/")
 def create_client(
+    request: Request,
     client_in: schemas.ClientCreate = Depends(schemas.ClientForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
@@ -34,7 +36,9 @@ def create_client(
     except Exception as e:
         db.rollback()
         print(e)
-    return client
+    return RedirectResponse(
+        request.url_for("read_clients"), status_code=status.HTTP_303_SEE_OTHER
+    )
 
 
 @router.post("/multi", response_model=list[schemas.Client])

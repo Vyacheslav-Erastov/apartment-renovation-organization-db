@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, status
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
@@ -26,19 +27,21 @@ def read_employees(
     )
 
 
-@router.post("/", response_model=schemas.Employee)
+@router.post("/")
 def create_employee(
-    employee_in: schemas.EmployeeCreate,
+    request: Request,
+    employee_in: schemas.EmployeeCreate = Depends(schemas.EmployeeForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
     try:
-        employee_in.id = uuid4()
         employee = crud.employee.create(db=db, obj_in=employee_in)
         db.commit()
     except Exception as e:
         db.rollback()
         print(e)
-    return employee
+    return RedirectResponse(
+        request.url_for("read_employees"), status_code=status.HTTP_303_SEE_OTHER
+    )
 
 
 @router.post("/multi", response_model=list[schemas.Employee])

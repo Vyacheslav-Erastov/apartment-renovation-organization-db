@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, status
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
@@ -27,19 +28,21 @@ def read_orders(
     )
 
 
-@router.post("/", response_model=schemas.Order)
+@router.post("/")
 def create_order(
-    order_in: schemas.OrderCreate,
+    request: Request,
+    order_in: schemas.OrderCreate = Depends(schemas.OrderForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
     try:
-        order_in.id = uuid4()
         order = crud.order.create(db=db, obj_in=order_in)
         db.commit()
     except Exception as e:
         db.rollback()
         print(e)
-    return order
+    return RedirectResponse(
+        request.url_for("read_orders"), status_code=status.HTTP_303_SEE_OTHER
+    )
 
 
 @router.post("/multi", response_model=list[schemas.Order])

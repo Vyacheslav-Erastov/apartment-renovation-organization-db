@@ -1,5 +1,6 @@
 from uuid import UUID, uuid4
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, status
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schemas
@@ -27,19 +28,21 @@ def read_services(
     )
 
 
-@router.post("/", response_model=schemas.Service)
+@router.post("/")
 def create_service(
-    service_in: schemas.ServiceCreate,
+    request: Request,
+    service_in: schemas.ServiceCreate = Depends(schemas.ServiceForm.as_form),
     db: Session = Depends(deps.get_db),
 ):
     try:
-        service_in.id = uuid4()
         service = crud.service.create(db=db, obj_in=service_in)
         db.commit()
     except Exception as e:
         db.rollback()
         print(e)
-    return service
+    return RedirectResponse(
+        request.url_for("read_services"), status_code=status.HTTP_303_SEE_OTHER
+    )
 
 
 @router.post("/multi", response_model=list[schemas.Service])

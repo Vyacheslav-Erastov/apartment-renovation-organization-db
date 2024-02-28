@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">ID услуги</th>
+            <th scope="col">ID заказа</th>
+            <th scope="col">ID работника</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Время начала</th>
+            <th scope="col">Время окончания</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for work in works %}
+        <tr>
+            <th scope="row">{{work.id}}</th>
+            <td>{{work.service_id}}</td>
+            <td>{{work.order_id}}</td>
+            <td>{{work.employee_id}}</td>
+            <td>{{work.description}}</td>
+            <td>{{work.start_date}}</td>
+            <td>{{work.finish_date}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

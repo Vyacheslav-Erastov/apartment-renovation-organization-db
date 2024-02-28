@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">ID клиента</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Стоимость</th>
+            <th scope="col">Время начала</th>
+            <th scope="col">Время окончания</th>
+            <th scope="col">Статус оплаты</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <th scope="row">{{order.id}}</th>
+            <td>{{order.client_id}}</td>
+            <td>{{order.status}}</td>
+            <td>{{order.price}}</td>
+            <td>{{order.start_date}}</td>
+            <td>{{order.finish_date}}</td>
+            <td>{{order.paid}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

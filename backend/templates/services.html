@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Название услуги</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Стоимость</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for service in services %}
+        <tr>
+            <th scope="row">{{service.id}}</th>
+            <td>{{service.name}}</td>
+            <td>{{service.description}}</td>
+            <td>{{service.price}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
